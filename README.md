@@ -16,7 +16,7 @@
 
 ## Deployment
 [Progressive Budget Tracker ](https://fast-dawn-45098.herokuapp.com/)
-This app is deployed live on Heroku! (Click Link!)
+This app is deployed live on Heroku!! (Click Link!)
 
 ## Demo
 <img src="./images/screenshots1.png">
