@@ -1,6 +1,4 @@
-const { response } = require('express');
 const mongoose = require('mongoose');
-
 const Schema = mongoose.Schema;
 
 const workoutSchema = new Schema({
@@ -10,32 +8,33 @@ const workoutSchema = new Schema({
   },
   exercises: [
     {
-      type: String,
-      trim: true,
-      required: true
+      type: { type: String, required: "Choose a workout option" },
+      name: {
+        type: String,
+      },
+
+      duration: {
+        type: Number,
+      },
+
+      weight: {
+        type: Number,
+      },
+
+      reps: {
+        type: Number,
+      },
+
+      sets: {
+        type: Number,
+      },
+
+      distance: {
+        type: Number,
+      },
+
     },
-    name: {
-      type: String,
-      trim: true,
-      required: true
-    },
-    duration: {
-      type: Number,
-      required: true
-    },
-    weight: {
-      type: Number
-    },
-    reps: {
-      type: Number
-    },
-    sets: {
-      type: Number
-    },
-    distance: {
-      type: Number
-    }
-]
+  ],
 });
 
 const Workout = mongoose.model("Workout", workoutSchema);
