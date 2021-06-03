@@ -1,11 +1,14 @@
-const router = require('express').Router();
+const path = require('path');
+module.exports = function (app) {
+  app.get('/', function (req, res) {
+    res.sendFile(path.join(__dirname, '../public/index.html'));
+  });
 
-router.post('/api/transaction', ({ body }, res) => {
-  Transaction.create(body)
-    .then((dbTransaction) => {
-      res.json(dbTransaction);
-    })
-    .catch((err) => {
-      res.status(400).json(err);
-    });
-});
+  app.get('/exercise', function (req, res) {
+    res.sendFile(path.join(__dirname, '../public/exercise.html'));
+  });
+
+  app.get('/stats', function (req, res) {
+    res.sendFile(path.join(__dirname, '../public/stats/html'));
+  });
+};
